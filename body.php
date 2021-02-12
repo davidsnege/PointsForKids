@@ -48,6 +48,7 @@
                 <table class="table table-bordered table-hover">
                     <thead class="thead-dark">
                         <tr>
+                            <th>IMG</th>
                             <th>ID</th>
                             <th>ROLE</th>
                             <th>NAME</th>
@@ -61,13 +62,51 @@
                     <tbody>
                             <?php 
                             foreach ($data as $key => $value) {
+
                               echo '<tr>';
+                              if(file_exists("user/".$value->data->id."/img_perfil/default.jpg") ){
+                                echo '<td><img src="user/'.$value->data->id.'/img_perfil/default.jpg" width="45px"> </td>';
+                              }else{
+                                echo '<td><img src="assets/bajados/star.png" width="45px"> </td>';
+                              }
                               echo '<td scope="row">'.$value->data->id.'</td>';
                               echo '<td>'.$value->data->role.'</td>';
                               echo '<td>'.$value->data->name.'</td>';
                               echo '<td>'.$value->data->mail.'</td>';
                               echo '<td>'.$value->data->pwd.'</td>';
-                              echo '<td>'.$value->data->points.'</td>';
+                              echo '<td>';
+                              // echo $value->data->points;
+                              
+                              
+                              $points = $value->data->points;
+                              $stars = 2;
+                              $hearts = 3;
+                              $moneys = 5;
+
+                                // fazer a comparação
+                                $value_points = $value->data->points; // Valor de teste
+
+                                $star_points_actual = $value_points / $stars;
+                                $hearts_points_actual = $value_points / $hearts;
+                                $moneys_points_actual = $value_points / $moneys;
+
+                                if($moneys_points_actual > 1.0){
+                                  // echo $moneys_points_actual;
+                                  echo '<img src="assets/bajados/money.png" width="20px">';
+                                }
+                                
+                                if($hearts_points_actual > 1.0){
+                                  // echo $hearts_points_actual;
+                                  echo '<img src="assets/bajados/heart.png" width="20px">';
+                                }
+
+                                if($star_points_actual > 1.0){
+                                  // echo $star_points_actual;
+                                  echo '<img src="assets/bajados/star.png" width="20px">';
+                                }
+
+                              
+                              echo '</td>';
                               echo '<td>'.$value->data->confiance_points.'</td>';
                               echo '<td>'.$value->data->reg_date.'</td>';
                               echo '</tr>';
