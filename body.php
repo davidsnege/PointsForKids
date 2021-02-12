@@ -61,6 +61,9 @@
                     </thead>
                     <tbody>
                             <?php 
+                            $tat1 = 0;
+                            $tat2 = 0;
+                            $tat3 = 0;
                             foreach ($data as $key => $value) {
 
                               echo '<tr>';
@@ -77,11 +80,10 @@
                               echo '<td>';
                               // echo $value->data->points;
                               
-                              
                               $points = $value->data->points;
-                              $stars = 2;
-                              $hearts = 3;
-                              $moneys = 5;
+                              $stars =  1000;
+                              $hearts = 1000;
+                              $moneys = 1000;
 
                                 // fazer a comparação
                                 $value_points = $value->data->points; // Valor de teste
@@ -90,21 +92,35 @@
                                 $hearts_points_actual = $value_points / $hearts;
                                 $moneys_points_actual = $value_points / $moneys;
 
-                                if($moneys_points_actual > 1.0){
-                                  // echo $moneys_points_actual;
-                                  echo '<img src="assets/bajados/money.png" width="20px">';
+                                if($moneys_points_actual > 1){
+                                  $tat1 += $moneys_points_actual;
+                                  $tat1 = $tat1 / 10;
+                                  echo "Tat: ".round($tat1, 0, PHP_ROUND_HALF_DOWN);
+                                  for ($i=0; $i < round($tat1, 0, PHP_ROUND_HALF_DOWN); $i++) { 
+                                    # code...
+                                    echo '<img src="assets/bajados/money.png" width="20px">';
+                                  }
                                 }
                                 
-                                if($hearts_points_actual > 1.0){
-                                  // echo $hearts_points_actual;
-                                  echo '<img src="assets/bajados/heart.png" width="20px">';
+                                if($hearts_points_actual > 1){
+                                  $tat2 += $hearts_points_actual;
+                                  $tat2 = $tat2 / 10;
+                                  echo "Tat: ".round($tat2, 0, PHP_ROUND_HALF_DOWN);
+                                  for ($i=0; $i < round($tat2, 0, PHP_ROUND_HALF_DOWN); $i++) { 
+                                    # code...
+                                    echo '<img src="assets/bajados/heart.png" width="20px">';
+                                  }
                                 }
 
-                                if($star_points_actual > 1.0){
-                                  // echo $star_points_actual;
-                                  echo '<img src="assets/bajados/star.png" width="20px">';
+                                if($star_points_actual > 1){
+                                  $tat3 += $star_points_actual;
+                                  $tat3 = $tat3 / 10;
+                                  echo "Tat: ".round($tat3, 0, PHP_ROUND_HALF_DOWN);
+                                  for ($i=0; $i < round($tat3, 0, PHP_ROUND_HALF_DOWN); $i++) { 
+                                    # code...
+                                    echo '<img src="assets/bajados/star.png" width="20px">';
+                                  }
                                 }
-
                               
                               echo '</td>';
                               echo '<td>'.$value->data->confiance_points.'</td>';
