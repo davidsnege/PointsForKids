@@ -92,7 +92,7 @@ echo '</pre>';
 
 
 
-// header('Location: ver_usuarios.php');
-// exit;
+header('Location: ../index.php');
+exit;
 
 ?>

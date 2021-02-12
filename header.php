@@ -10,7 +10,7 @@
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">ADD USER</a>
+        <a class="nav-link" href="#" data-toggle="modal" data-target="#exampleModal">ADD USER</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">EDIT USER</a>

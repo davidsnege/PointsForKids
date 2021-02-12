@@ -21,7 +21,7 @@
               <nav class="navbar navbar-dark bg-dark">
                   <ul class="navbar-nav">
                   <li class="nav-item">
-                      <a class="nav-link" href="#">ADD USER</a>
+                      <a class="nav-link" href="#" data-toggle="modal" data-target="#exampleModal">ADD USER</a>
                   </li>
                   <li class="nav-item">
                       <a class="nav-link" href="#">EDIT USER</a>
@@ -81,4 +81,65 @@
 
 
 
+</div>
+
+
+<!-- MODAL CADASTRA USUARIO -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Cadastrar Usuario</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+              <form action="app/add_user.php" method="post">
+                  <div class="form-group">
+                    <label for="exampleFormControlSelect1">Role</label>
+                    <select class="form-control" id="role" name="role">
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="exampleFormControlInput1">Nome</label>
+                    <input type="text" name="name" class="form-control" id="exampleFormControlInput1" placeholder="Nome">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="exampleFormControlInput1">Email address</label>
+                    <input type="email" name="mail" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" name="pwd" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Default Confiance Points</label>
+                    <input type="text"  name="confiance_points" class="form-control" id="exampleInputPassword1" placeholder="0.005" value="0.005">
+                  </div>
+
+                  <div class="form-group">
+                    <input type="hidden" name="points" class="form-control" id="points" placeholder="0" value="0">
+                  </div>
+
+                  <button type="submit" class="btn btn-primary btn-sm">Cadastrar</button>
+
+          </form>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
 </div>
