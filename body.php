@@ -8,8 +8,8 @@
             <div class="col-sm-12">
                 <nav aria-label="Page breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item active" aria-current="page">Link 1</li>
-                        <li class="breadcrumb-item">Item 2</li>
+                        <li class="breadcrumb-item active" aria-current="page">Home</li>
+                        <li class="breadcrumb-item" id="Bread2">...</li>
                     </ol>
                 </nav>
             </div>
@@ -21,7 +21,7 @@
               <nav class="navbar navbar-dark bg-dark">
                   <ul class="navbar-nav">
                   <li class="nav-item">
-                      <a class="nav-link" href="#" data-toggle="modal" data-target="#exampleModal">ADD USER</a>
+                      <a class="nav-link" href="#" id="ADDUSER" data-toggle="modal" data-target="#exampleModal">ADD USER</a>
                   </li>
                   <li class="nav-item">
                       <a class="nav-link" href="#">EDIT USER</a>
@@ -42,10 +42,19 @@
                   </li> -->
                   </ul>                        
               </nav>
+
+              <div class="card">
+                <div class="card-body">
+                  Total Users is <spam class="totalUsers">...</spam>
+                </div>
+              </div>
+
           </div>
 
+
+
           <div class="col-md-10">
-                <table class="table table-bordered table-hover">
+                <table class="table table-bordered table-hover" id="SeeTable">
                     <thead class="thead-dark">
                         <tr>
                             <th>IMG</th>
@@ -72,7 +81,7 @@
                               }else{
                                 echo '<td><img src="assets/bajados/star.png" width="45px"> </td>';
                               }
-                              echo '<td scope="row">'.$value->data->id.'</td>';
+                              echo '<td class="ids" scope="row" id="'.$value->data->id.'">'.$value->data->id.'</td>';
                               echo '<td>'.$value->data->role.'</td>';
                               echo '<td>'.$value->data->name.'</td>';
                               echo '<td>'.$value->data->mail.'</td>';
@@ -130,6 +139,9 @@
                             ?>
             </tbody>
         </table>
+
+
+        </br></br>
   </div>
 
 </div>
@@ -145,7 +157,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Cadastrar Usuario</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <button type="button" class="close" id="CLOSE" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -193,7 +205,7 @@
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn-secondary" id="CLOSE2" data-dismiss="modal">Fechar</button>
       </div>
     </div>
   </div>
