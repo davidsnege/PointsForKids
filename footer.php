@@ -1,7 +1,9 @@
 
 
 
-
+<nav class="navbar navbar-light bg-light sticky-bottom fixed-bottom">
+    <span class="navbar-brand mb-0">Footer</span>
+</nav>
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->

@@ -6,14 +6,14 @@
 // $id = base64_encode($mail);
 
 
-$id = 'dmljdG9yLnIuYi5zbmVnZUBnbWFpbC5jb20='; //USado para teste Victor
+$id = 'bmljb2xlLnIuYi5zbmVnZUBnbWFpbC5jb20='; //USado para teste Victor
 // $id = 'bmljb2xlLnIuYi5zbmVnZUBnbWFpbC5jb20='; //USado para teste Nicole
 
 
 //Convertemos isso em variaveis usaveis
 $user = $id;
 $userCarpeta = $user;
-$ruta = "../user/".$userCarpeta.'/'.$user.'.json';
+$ruta = "user/".$userCarpeta.'/'.$user.'.json';
 
 //Si el archivo ehxiste en la ruta, entonces lo buscamos
 if (file_exists($ruta)) {
@@ -55,6 +55,8 @@ $moneys_points_actual = $value_points * $value_moneys;
 								 echo '<br>';
 								 echo '<hr>';
 //Fin del bucle
+
+	return $contenido_gravado;
 
 ?>
 <!-- dmljdG9yLnIuYi5zbmVnZUBnbWFpbC5jb20=.json -->
